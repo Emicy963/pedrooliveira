@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Feliz Aniversário Pedro! 🎂</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página especial de felicitações de aniversário para Pedro de Oliveira"
+    />
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              cursive: ["Pacifico", "cursive"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+              gradient: "gradient 15s ease infinite",
+              "bounce-slow": "bounce 3s infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="min-h-screen font-sans overflow-x-hidden">
+    <!-- Loader/Start Screen -->
+    <div class="loader">
+      <div class="loader-content">
+        <div class="loader-icon mb-8">
+          <span class="text-8xl animate-bounce-slow">🎂</span>
+        </div>
+        <h2 class="text-white text-2xl md:text-3xl font-light mb-4 opacity-80">
+          Uma surpresa especial te espera...
+        </h2>
+        <button id="play" class="start-btn">
+          <span class="btn-text">Celebrar! 🎉</span>
+          <span class="btn-glow"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Audio -->
+    <audio class="song" controls loop>
+      <source src="music.mp3" />
+      Your browser isn't invited for super fun audio time.
+    </audio>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div
+        class="min-h-screen flex flex-col items-center justify-center px-4 py-8"
+      >
+        <!-- Glass Card -->
+        <div
+          class="glass-card w-full max-w-2xl mx-auto p-8 md:p-12 text-center"
+        >
+          <!-- Banner -->
+          <div class="mb-6 relative">
+            <img
+              src="img/banner.png"
+              alt="Happy Birthday Banner"
+              class="mx-auto w-full max-w-md drop-shadow-lg"
+            />
+            <div class="absolute -top-4 -right-4 text-4xl animate-float">
+              ✨
+            </div>
+            <div
+              class="absolute -bottom-2 -left-4 text-4xl animate-float"
+              style="animation-delay: 1s"
+            >
+              🎈
+            </div>
+          </div>
+
+          <!-- Name Display -->
+          <div class="my-8">
+            <h1 id="name" class="name-display font-cursive">
+              Pedro de Oliveira
+            </h1>
+          </div>
+
+          <!-- Typed Messages -->
+          <div class="type-wrap my-8">
+            <div id="typed-strings" class="typing">
+              <h2>🎉 Feliz Aniversário, <i id="nae">Pedro</i>! 🎉</h2>
+              <h2>Que este dia seja repleto de alegria e amor! 💖</h2>
+              <h2>Muita saúde, paz e sucesso! 🌟</h2>
+              <h2>Que todos os teus sonhos se realizem! ✨</h2>
+              <h2>08 de Janeiro de 2026 — Um dia especial! 🎂</h2>
+            </div>
+            <span id="typed" class="typed-cursor"></span>
+          </div>
+
+          <!-- Cake -->
+          <div class="cake-container mt-8">
+            <img
+              src="img/cake.gif"
+              alt="Birthday Cake"
+              class="cake-img mx-auto"
+            />
+          </div>
+
+          <!-- Special Message -->
+          <div class="mt-8 p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+            <p
+              class="text-white/90 text-lg md:text-xl font-light leading-relaxed"
+            >
+              🎊 Parabéns por mais um ano de vida! 🎊<br />
+              <span class="text-yellow-300 font-semibold"
+                >Que este novo ciclo seja extraordinário!</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Balloon Border -->
+      <img src="img/Balloon-Border.png" alt="Balloons" class="balloon-border" />
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
